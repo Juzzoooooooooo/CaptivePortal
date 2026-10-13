@@ -6,6 +6,7 @@ This project turns the captive portal and monitoring parts of `Capstone2ProJ.pdf
 - `admin/` is a **read-only IT dashboard** for interface traffic, active captive portal sessions, the proposed network path, and optional Zabbix device health and alerts.
 
 For an easy-to-read explanation, see [Simple School Wi-Fi Guide](docs/Simple_School_WiFi_Guide.docx).
+For the proposed VLAN and VM layout, see [Network Setup Guide](docs/network-setup-guide.md).
 
 ## Preview locally
 
