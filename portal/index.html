@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#143a31">
+  <meta name="description" content="Ilaya National High School campus Wi-Fi sign-in">
+  <title>Campus Wi-Fi | Ilaya National High School</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="portal.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="/index.html" aria-label="Ilaya National High School Wi-Fi home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 52 52" fill="none"><path d="M26 3 47 11v13c0 13-8.7 20.3-21 25C13.7 44.3 5 37 5 24V11L26 3Z" fill="#F5CB67"/><path d="M26 7 43 13.4v10.3c0 10.8-6.6 17-17 21.1-10.4-4.1-17-10.3-17-21.1V13.4L26 7Z" fill="#174B3D"/><path d="M15 27.5c7.3-3.7 14.7-3.7 22 0v9.4c-7.3-3.8-14.7-3.8-22 0v-9.4Z" fill="#FFF8E7"/><path d="M26 25.2V38" stroke="#174B3D" stroke-width="1.5"/><path d="M17.5 29.5c2.4-.9 4.9-1.4 7.3-1.3M27.2 28.2c2.4-.1 4.9.4 7.3 1.3" stroke="#B3AE8F" stroke-linecap="round"/><path d="m26 12 1.7 3.5 3.8.5-2.8 2.8.7 3.8-3.4-1.8-3.4 1.8.7-3.8-2.8-2.8 3.8-.5L26 12Z" fill="#F5CB67"/></svg>
+        </span>
+        <span class="brand-copy"><strong>Ilaya</strong><span>National High School</span></span>
+      </a>
+      <span class="header-label"><span class="header-dot"></span> CAMPUS NETWORK</span>
+    </header>
+
+    <main class="main-grid">
+      <section class="intro" aria-labelledby="intro-title">
+        <div class="intro-inner">
+          <div class="eyebrow"><span class="eyebrow-line"></span> A BETTER WAY TO STAY CONNECTED</div>
+          <h1 id="intro-title">Welcome to<br><em>campus Wi-Fi.</em></h1>
+          <p class="intro-lead">A reliable connection for every lesson, idea, and opportunity.</p>
+          <p class="intro-body">Sign in with your school network account to access the internet across Ilaya National High School.</p>
+
+          <div class="connection-art" aria-hidden="true">
+            <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
+            <div class="art-center"><svg viewBox="0 0 64 64" fill="none"><path d="M9 24.5C22.4 13.5 41.6 13.5 55 24.5M17 33c9-7.3 21-7.3 30 0M25.5 41.3a10.5 10.5 0 0 1 13 0" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="49" r="3.5" fill="currentColor"/></svg></div>
+            <span class="art-spark spark-a">✦</span><span class="art-spark spark-b">✦</span><span class="art-spark spark-c">✦</span>
+          </div>
+
+          <div class="intro-footer"><span class="footer-rule"></span><span>LEARN &nbsp; • &nbsp; CONNECT &nbsp; • &nbsp; GROW</span></div>
+        </div>
+      </section>
+
+      <section class="access-panel" aria-labelledby="access-title">
+        <div class="panel-topline"><span class="step-number">01 / CONNECT</span><span class="secure-badge"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="4" y="8" width="12" height="9" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 8V6a3 3 0 0 1 6 0v2" stroke="currentColor" stroke-width="1.6"/></svg> SCHOOL ACCESS</span></div>
+        <div class="panel-heading"><div class="wifi-icon" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none"><path d="M6 15.5a22 22 0 0 1 28 0M11 21a14.5 14.5 0 0 1 18 0M16 26.5a7 7 0 0 1 8 0" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><circle cx="20" cy="32" r="2" fill="currentColor"/></svg></div><h2 id="access-title">Get connected</h2><p id="access-description">Checking how this network grants access…</p></div>
+
+        <div id="message" class="message" role="alert" aria-live="polite" hidden></div>
+        <div id="loading" class="loading-state" role="status"><span class="spinner"></span> Checking your connection…</div>
+
+        <form id="login-form" class="login-form" hidden>
+          <label for="username">Username</label>
+          <div class="input-wrap"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="3.3" stroke="currentColor" stroke-width="1.8"/><path d="M5 20a7 7 0 0 1 14 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><input id="username" name="username" type="text" placeholder="School username" autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false" required></div>
+          <label for="password">Password</label>
+          <div class="input-wrap password-wrap"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 10V7a4 4 0 1 1 8 0v3" stroke="currentColor" stroke-width="1.8"/></svg><input id="password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required><button id="show-password" class="show-password" type="button" aria-label="Show password">Show</button></div>
+          <label class="check-row"><input id="agree-password" type="checkbox" required><span>I agree to the <button class="text-link" type="button" data-open-policy>campus Wi-Fi guidelines</button>.</span></label>
+          <button class="primary-button" id="signin-button" type="submit"><span>Connect to Wi-Fi</span><span aria-hidden="true">→</span></button>
+        </form>
+
+        <form id="anonymous-form" class="login-form" hidden>
+          <p class="form-note">This network allows access after you accept the campus Wi-Fi guidelines.</p>
+          <label class="check-row"><input id="agree-anonymous" type="checkbox" required><span>I agree to the <button class="text-link" type="button" data-open-policy>campus Wi-Fi guidelines</button>.</span></label>
+          <button class="primary-button" id="anonymous-button" type="submit"><span>Accept & connect</span><span aria-hidden="true">→</span></button>
+        </form>
+
+        <div id="connected-state" class="connected-state" hidden><div class="connected-icon" aria-hidden="true">✓</div><h3>You’re connected</h3><p>Your device has access to the campus network.</p><dl id="session-details" class="session-details" hidden><div id="session-user-row" hidden><dt>Signed in as</dt><dd id="session-user"></dd></div><div id="session-ip-row" hidden><dt>Device IP</dt><dd id="session-ip"></dd></div></dl><a id="continue-link" class="primary-button continue-button" href="http://neverssl.com/"><span>Continue browsing</span><span aria-hidden="true">→</span></a><button id="logout-button" class="logout-button" type="button">Disconnect this device</button></div>
+
+        <div class="panel-bottom"><span class="help-icon" aria-hidden="true">?</span><p>Need help signing in?<br><strong>Contact your school IT coordinator.</strong></p></div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><span>© <span id="year"></span> Ilaya National High School</span><span>Balimbing, Boac, Marinduque</span></footer>
+  </div>
+
+  <dialog id="policy-dialog" aria-labelledby="policy-title"><div class="dialog-head"><div><span class="dialog-kicker">CAMPUS NETWORK</span><h2 id="policy-title">Wi-Fi guidelines</h2></div><button id="close-policy" class="dialog-close" type="button" aria-label="Close guidelines">×</button></div><div class="dialog-content"><p>This connection is intended for school learning, teaching, communication, and administrative work.</p><ul><li>Use your own school network account and keep your password private.</li><li>Respect other users and avoid activity that disrupts the shared connection.</li><li>Follow school rules and applicable laws when using online resources.</li><li>Report access problems or suspicious activity to the school IT coordinator.</li></ul><p class="policy-note">These are draft on-screen guidelines. The school should review and approve the final policy before deployment.</p></div><button id="policy-done" class="primary-button" type="button"><span>Got it</span><span aria-hidden="true">→</span></button></dialog>
+</body>
+</html>

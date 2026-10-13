@@ -1,0 +1,6 @@
+Capstone2ProJ.pdf
+.env
+.env.*
+node_modules/
+capstone-extracted.txt
+*.log

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d3029">
+  <title>Network Overview | Ilaya IT</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">I</span><div><strong>ILAYA<span> / IT</span></strong><small>NETWORK OPERATIONS</small></div></div>
+      <div class="school-pill"><span class="pill-icon">⌁</span><div><strong>Campus network</strong><span>Boac, Marinduque</span></div><span class="pill-chev">⌄</span></div>
+      <div class="nav-caption">WORKSPACE</div>
+      <nav aria-label="Dashboard sections"><a href="#overview" class="nav-link active" data-nav="overview"><span class="nav-icon">▦</span> Overview</a><a href="#traffic" class="nav-link" data-nav="traffic"><span class="nav-icon">⌁</span> Traffic flow</a><a href="#sessions" class="nav-link" data-nav="sessions"><span class="nav-icon">♙</span> Active sessions</a><a href="#devices" class="nav-link" data-nav="devices"><span class="nav-icon">▣</span> Devices & alerts</a></nav>
+      <div class="sidebar-bottom"><div class="sidebar-status"><span class="status-ring"></span><div><strong>Monitoring service</strong><span id="sidebar-mode">Connecting…</span></div></div><div class="sidebar-meta">ILAYA NATIONAL HIGH SCHOOL<br>CAPSTONE NETWORK PORTAL</div></div>
+    </aside>
+
+    <div class="content-shell">
+      <header class="topbar"><div class="breadcrumb">Network / <strong>Overview</strong></div><div class="topbar-actions"><span class="topbar-date" id="header-date"></span><span class="avatar" title="IT administrator">IT</span></div></header>
+      <main id="overview">
+        <div class="page-heading"><div><div class="eyebrow">NETWORK OPERATIONS CENTER <span></span> LIVE OVERVIEW</div><h1>Good day, IT team <span>✦</span></h1><p>Keep an eye on campus connectivity, usage, and device health.</p></div><div class="heading-actions"><span class="update-time" id="update-time">Waiting for first update</span><button id="refresh-button" class="refresh-button" type="button"><span aria-hidden="true">↻</span> Refresh data</button></div></div>
+
+        <div id="mode-banner" class="mode-banner" role="status">Connecting to the monitoring service…</div>
+        <div id="error-banner" class="error-banner" role="alert" hidden></div>
+
+        <section class="metrics" aria-label="Network metrics">
+          <article class="metric-card"><div class="metric-top"><span>INBOUND TRAFFIC</span><span class="metric-icon mint">↓</span></div><strong id="metric-in">—</strong><div class="metric-foot"><span class="metric-dot"></span> On selected interface <span id="metric-interface">—</span></div></article>
+          <article class="metric-card"><div class="metric-top"><span>OUTBOUND TRAFFIC</span><span class="metric-icon blue">↑</span></div><strong id="metric-out">—</strong><div class="metric-foot"><span class="metric-dot"></span> On selected interface <span id="metric-interface-out">—</span></div></article>
+          <article class="metric-card"><div class="metric-top"><span>ACTIVE SESSIONS</span><span class="metric-icon amber">♙</span></div><strong id="metric-sessions">—</strong><div class="metric-foot">Devices in <span id="metric-zone">—</span></div></article>
+          <article class="metric-card"><div class="metric-top"><span>OPEN ALERTS</span><span class="metric-icon red">!</span></div><strong id="metric-alerts">—</strong><div class="metric-foot" id="alerts-caption">Zabbix connection status</div></article>
+        </section>
+
+        <div class="main-cards" id="traffic">
+          <section class="card traffic-card"><div class="card-head"><div><div class="section-kicker">REAL-TIME ACTIVITY</div><h2>Network traffic</h2></div><span class="live-pill"><span></span> 5 SEC REFRESH</span></div><div class="chart-legend"><span><i class="legend-in"></i> Inbound</span><span><i class="legend-out"></i> Outbound</span><span class="chart-unit">Mbps</span></div><div class="chart-wrap"><div class="chart-grid"><span id="axis-max">10</span><span id="axis-mid">5</span><span>0</span></div><svg id="traffic-chart" viewBox="0 0 600 220" preserveAspectRatio="none" role="img" aria-label="Inbound and outbound traffic over recent samples"><defs><linearGradient id="area-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#39ad84" stop-opacity=".21"/><stop offset="1" stop-color="#39ad84" stop-opacity="0"/></linearGradient></defs><path id="area-path" fill="url(#area-fill)"></path><path id="in-path" fill="none" stroke="#2caa7d" stroke-width="3" vector-effect="non-scaling-stroke"></path><path id="out-path" fill="none" stroke="#5f88d8" stroke-width="3" vector-effect="non-scaling-stroke"></path></svg></div><div class="chart-times"><span id="chart-start">—</span><span>Recent samples</span><span id="chart-end">Now</span></div></section>
+
+          <section class="card flow-card"><div class="card-head"><div><div class="section-kicker">CONNECTION PATH</div><h2>Network flow</h2></div><span class="flow-tag">PROPOSED TOPOLOGY</span></div><div class="flow-stack"><div class="flow-node"><span class="node-icon internet">◎</span><div><strong>Internet service</strong><small>School uplink</small></div><span class="node-state">UPLINK</span></div><div class="flow-line"><span>↓</span></div><div class="flow-node"><span class="node-icon firewall">◇</span><div><strong>OPNsense firewall</strong><small>Captive portal & access control</small></div><span class="node-state green">GATEWAY</span></div><div class="flow-line"><span>↓</span></div><div class="flow-node"><span class="node-icon switch">▦</span><div><strong>TP-Link switch</strong><small>VLAN network distribution</small></div><span class="node-state">SWITCH</span></div><div class="flow-line"><span>↓</span></div><div class="flow-node"><span class="node-icon clients">⌁</span><div><strong>Access points & clients</strong><small>Classrooms, teachers, and staff</small></div><span class="node-state">WI-FI</span></div></div><p class="flow-caption">Traffic figures reflect the selected OPNsense interface. The path is from the capstone design.</p></section>
+        </div>
+
+        <div class="bottom-cards"><section class="card sessions-card" id="sessions"><div class="card-head"><div><div class="section-kicker">CAPTIVE PORTAL</div><h2>Active sessions <span id="session-count" class="count-badge">0</span></h2></div><input id="session-search" class="search" type="search" placeholder="Search user or IP" aria-label="Search sessions"></div><div class="table-scroll"><table><thead><tr><th>USER</th><th>IP ADDRESS</th><th>CONNECTED</th><th>DATA USED</th></tr></thead><tbody id="session-rows"><tr><td colspan="4" class="empty-row">Loading sessions…</td></tr></tbody></table></div></section>
+          <div class="right-stack" id="devices"><section class="card devices-card"><div class="card-head"><div><div class="section-kicker">ZABBIX MONITORING</div><h2>Device health</h2></div><span id="host-count" class="small-count">—</span></div><div id="host-list" class="compact-list"><p class="empty-text">Waiting for device data…</p></div></section><section class="card alerts-card"><div class="card-head"><div><div class="section-kicker">ATTENTION NEEDED</div><h2>Recent alerts</h2></div><span class="alert-symbol">!</span></div><div id="problem-list" class="compact-list"><p class="empty-text">Waiting for alerts…</p></div></section></div></div>
+      </main>
+      <footer class="footer"><span>Ilaya National High School · Network operations</span><span>OPNsense + Zabbix integration</span></footer>
+    </div>
+  </div>
+</body>
+</html>
