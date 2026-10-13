@@ -5,6 +5,8 @@ This project turns the captive portal and monitoring parts of `Capstone2ProJ.pdf
 - `portal/` is an **OPNsense captive portal template** for students, teachers, and staff.
 - `admin/` is a **read-only IT dashboard** for interface traffic, active captive portal sessions, the proposed network path, and optional Zabbix device health and alerts.
 
+For an easy-to-read explanation, see [Simple School Wi-Fi Guide](docs/Simple_School_WiFi_Guide.docx).
+
 ## Preview locally
 
 From this folder, run these commands in separate terminals:

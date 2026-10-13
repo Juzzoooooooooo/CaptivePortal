@@ -4,3 +4,5 @@ Capstone2ProJ.pdf
 node_modules/
 capstone-extracted.txt
 *.log
+~$*.docx
+docs/How_the_Captive_Portal_Works.docx
